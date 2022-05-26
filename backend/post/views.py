@@ -28,3 +28,14 @@ def user_post(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def edit_post(request, pk):
+    if request.method == 'PUT':
+        post = get_object_or_404(Post, pk=pk)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(post=request.data)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
