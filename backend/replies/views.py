@@ -14,7 +14,7 @@ from post.models import Post
 def user_reply(request):
     print('User', f'{request.data} {request.user.email} {request.user.username}')
     if request.method == 'POST':
-        serializer = ReplySerializer( data=request.data)
+        serializer = ReplySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
