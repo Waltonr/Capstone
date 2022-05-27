@@ -15,7 +15,16 @@ def user_reply(request):
     print('User', f'{request.data} {request.user.email} {request.user.username}')
     if request.method == 'POST':
         serializer = ReplySerializer(data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['Get'])
+@permission_classes([IsAuthenticated])
+def get_replies(request):
+    if request.method == 'GET':
+        replies = Reply.objects.all()
+        serializer = ReplySerializer(replies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

@@ -8,7 +8,7 @@ from .serializers import PostSerializer
 
 # Create your views here.
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_all_posts(request):
     if request.method == 'GET':
