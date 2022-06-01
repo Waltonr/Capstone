@@ -37,7 +37,6 @@ const HomePage = () => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
-      <Link to="socialfeed">Social Feed</Link>
     </div>
   );
 };

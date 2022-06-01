@@ -4,7 +4,7 @@ import axios from "axios";
 import DisplayPosts from "../../components/DisplayPost/DisplayPost";
 import CreatePost from "../../components/CreatePost/CreatePost";
 import DisplayReplies from "../../components/DisplayReplies/DisplayReplies";
-import CreateReplies from "../../components/CreateReply/CreateReply";
+
 
 const SocialfeedPage = (props) => {
     const [posts, setAllPosts] = useState()
@@ -48,7 +48,6 @@ const SocialfeedPage = (props) => {
             <h2>SOCIAL FEED</h2>
             <CreatePost />
             <DisplayPosts getAllPostsProperty={posts} />
-            <CreateReplies />
             <DisplayReplies getAllRepliesProperty={replies} />
         </div>
      );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
-import axios from "axios";
+import CreateReply from "../CreateReply/CreateReply";
 
 const Post = (props) => {
     const { post} = props
@@ -23,21 +23,12 @@ const Post = (props) => {
         }
       }
     return ( 
-        <div>
-        <table>
-        <tbody>
-            <tr>
-                <td>
-                    {user.username}
-                    {post.text}
-                </td>
-            </tr>
-            <div>
-            <button className={likedButton} onClick={handleClick}></button>
-            <button className={dislikedButton} onClick={handleClick}></button>
-            </div>
-        </tbody>
-        </table>
+      <div>
+        {user.username}
+        {post.text}
+        <button className={likedButton} onClick={handleClick}></button>
+        <button className={dislikedButton} onClick={handleClick}></button>
+        <CreateReply />
       </div>
      );
 }
