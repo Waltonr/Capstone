@@ -24,7 +24,7 @@ def user_post(request):
     print('USER', f'{request.data} {request.user.email} {request.user.username}')
     if request.method == 'POST':
         serializer = PostSerializer(data=request.data)
-        if serializer.is_valid():
+        if serializer.is_valid(raise_exception=True):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
