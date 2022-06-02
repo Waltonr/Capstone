@@ -22,6 +22,8 @@ const CreatePost = (props) => {
                 }
             }
             );
+            console.log(response.data)
+            props.getAllPostProperty(response.data)
         } catch (error) {
             console.log("error with creating post")
             
@@ -41,7 +43,7 @@ const CreatePost = (props) => {
                      />    
                 </label>
             </div>
-            <button type='submit'>Post</button>
+            <button type='submit' onClick={handleSubmit}>Post</button>
         </form>
      );
 }
