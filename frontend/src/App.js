@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SocialfeedPage from "./pages/SocialfeedPage/SocialfeedPage";
-
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -30,7 +30,8 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
+        <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
+        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>

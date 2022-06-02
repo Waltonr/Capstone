@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import CreateReply from "../CreateReply/CreateReply";
 
+
 const Post = (props) => {
     const { post} = props
 
@@ -27,7 +28,9 @@ const Post = (props) => {
         {user.username}
         {post.text}
         <button className={likedButton} onClick={handleClick}></button>
+        {post.likes}
         <button className={dislikedButton} onClick={handleClick}></button>
+        {post.dislikes}
         <CreateReply />
       </div>
      );
