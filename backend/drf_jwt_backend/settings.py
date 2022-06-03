@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'post',
     'replies',
     'recommendations',
+    'locations',
+    'housing',
+    'information',
     'cars.apps.CarsConfig'  # This app is for example use only
 ]
 
