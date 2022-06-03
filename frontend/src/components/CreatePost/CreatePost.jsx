@@ -32,7 +32,7 @@ const CreatePost = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
                 <label>
                     Post:{""}
                     <input
