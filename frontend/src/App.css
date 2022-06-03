@@ -19,11 +19,11 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid coral;
+  color: lavenderblush;
   font-size: 1rem;
   font-family: inherit;
-  max-width: 100px;
+  max-width: 50px;
   padding: 0.5rem 0.5rem;
 }
 
@@ -55,4 +55,11 @@ button:hover {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+}
+
+.table {
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: salmon;
+  flex-wrap: wrap;
 }
