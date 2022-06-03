@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/post/', include('post.urls')),
     path('api/replies/', include('replies.urls')),
     path('api/recommendations/', include('recommendations.urls')),
-    path('api/locations/', include('locations.urls'))
+    path('api/locations/', include('locations.urls')),
+    path('api/information/', include('information.urls'))
 ]
