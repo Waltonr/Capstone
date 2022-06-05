@@ -53,7 +53,7 @@ const Post = (props) => {
         {post.likes}
         <button className={dislikedButton} onClick={handleClick}></button>
         {post.dislikes}
-        <button onClick={updatePost}>Edit</button>
+        <Link to="editpost">edit</Link>
         <CreateReply />
       </div>
      );

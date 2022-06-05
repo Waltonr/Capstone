@@ -8,6 +8,9 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SocialfeedPage from "./pages/SocialfeedPage/SocialfeedPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import EditInfoPage from "./pages/EditInfoPage/EditInfoPage";
+import EditPostPage from "./pages/EditPostPage/EditPostPage";
+
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -32,6 +35,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
         <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+        <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
+        <Route path="/socialfeed/editpost" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>

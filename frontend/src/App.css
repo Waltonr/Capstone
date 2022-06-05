@@ -19,8 +19,8 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid coral;
-  color: lavenderblush;
+  border: 2px solid white;
+  color: purple;
   font-size: 1rem;
   font-family: inherit;
   max-width: 50px;
@@ -60,6 +60,6 @@ button:hover {
 .table {
   box-sizing: border-box;
   border-style: solid;
-  border-color: salmon;
+  border-color: lavender;
   flex-wrap: wrap;
 }
