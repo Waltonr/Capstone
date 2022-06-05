@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Profile = (props) => {
 
@@ -48,7 +49,7 @@ const Profile = (props) => {
                 <thead>
                   <tr>
                     <th>INFORMATION</th>
-                    <button>Edit</button>
+                    <Link to="profile/editinfo">edit</Link>
                   </tr>
                 </thead>
                 <tbody>

@@ -1,5 +1,7 @@
 import React from "react"
 import axios from "axios"
+import useAuth from "../../hooks/useAuth"
+import useCustomForm from "../../hooks/useCustomForm"
 
 let initvalues = {
     age: 0,
@@ -27,32 +29,35 @@ const EditInfo = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>
-                    Information
-                </label>
-                <label>
-                    Age:{""}
-                    <input
-                     type="text" 
-                     name="age" 
-                     value={formData.age}
-                     onChange={handleInputChange}
-                     />    
-                </label>
-                <label>
-                    About:{""}
-                    <input
-                     type="text" 
-                     name="about" 
-                     value={formData.about}
-                     onChange={handleInputChange}
-                     />    
-                </label>
-            </div>
-            <button type='submit'>Submit</button>
-        </form>
+        <div>
+            <h2>Edit Info Page</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        Information
+                    </label>
+                    <label>
+                        Age:{""}
+                        <input
+                        type="text" 
+                        name="age" 
+                        value={formData.age}
+                        onChange={handleInputChange}
+                        />    
+                    </label>
+                    <label>
+                        About:{""}
+                        <input
+                        type="text" 
+                        name="about" 
+                        value={formData.about}
+                        onChange={handleInputChange}
+                        />    
+                    </label>
+                </div>
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
      );
 }
  
