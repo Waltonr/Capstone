@@ -49,7 +49,7 @@ const Profile = (props) => {
                 <thead>
                   <tr>
                     <th>INFORMATION</th>
-                    <Link to="profile/editinfo">edit</Link>
+                    <Link to="editinfo">edit</Link>
                   </tr>
                 </thead>
                 <tbody>
