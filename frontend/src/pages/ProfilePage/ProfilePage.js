@@ -42,8 +42,8 @@ const Profile = (props) => {
 
 
     return (
-        <div className="form-control">
-            <h2>Profile Page for {user.username}</h2>
+        <div className="profile">
+            <h2 className="profileuser">{user.username}</h2>
             <div>
               <table className="table">
                 <thead>
@@ -71,12 +71,30 @@ const Profile = (props) => {
               </table>
             </div>
             <div>
-                {recommends &&
-                    recommends.map((recommendation) => (
-                        <p key={recommendation.id}>
-                            {recommendation.location} {recommendation.housing}
-                        </p>
-                    ))}
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>MY RECOMMEDENDATIONS</th>
+                    <Link to="editrecommend">edit</Link>
+                  </tr>
+                </thead>
+                <tbody>
+                    {recommends &&
+                          recommends.map((recommend, index) => (
+                              <tr key={index}>
+                                  <td>Location:</td>
+                                  <td>{recommend.location}</td>
+                              </tr>
+                          ))}
+                    {recommends &&
+                          recommends.map((recommend, index) => (
+                              <tr key={index}>
+                                  <td>Housing:</td>
+                                  <td>{recommend.housing}</td>
+                              </tr>
+                          ))}
+                </tbody>
+              </table>
             </div>
         </div>
      );

@@ -22,7 +22,7 @@ def add_housing(request):
     print('User', f'{request.data} {request.user.email} {request.user.username}')
     if request.method == 'POST':
         serializer = HousingSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=request.user)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

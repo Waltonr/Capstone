@@ -46,14 +46,20 @@ const Post = (props) => {
         }
       }
     return ( 
-      <div>
-        <Link to="profile">{user.username}</Link>
-        {post.text}
-        <button className={likedButton} onClick={handleClick}></button>
-        {post.likes}
-        <button className={dislikedButton} onClick={handleClick}></button>
-        {post.dislikes}
-        <Link to="editpost">edit</Link>
+      <div className="post">
+        <div>
+          <Link to="profile">{user.username}</Link>
+          <Link to="editpost">edit</Link>
+        </div>
+        <div className="posttext">
+          {post.text}
+        </div>
+        <div>
+          <button className="likedbutton" onClick={handleClick}>Like</button>
+          {post.likes}
+          <button className="dislikedbutton" onClick={handleClick}>Dislike</button>
+          {post.dislikes}
+        </div>
         <CreateReply />
       </div>
      );

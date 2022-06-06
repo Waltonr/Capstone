@@ -48,7 +48,7 @@ button:hover {
   gap: 1rem;
 }
 
-.form input {
+.forminput {
   display: block;
   width: 100%;
   height: 25px;
@@ -59,7 +59,39 @@ button:hover {
 
 .table {
   box-sizing: border-box;
-  border-style: solid;
+  border-style: double;
   border-color: lavender;
   flex-wrap: wrap;
+  padding: 15px;
+  margin: 35px
+}
+
+.post {
+  box-sizing: border-box;
+  border-style: hidden;
+  flex-wrap: wrap;
+}
+
+
+.posttext {
+  font-size: initial;
+  font-weight: 500;
+}
+.likedbutton:hover {
+color: green;
+}
+
+.dislikedbutton:hover {
+  color: red;
+}
+
+.profile {
+  text-align: -webkit-center;
+}
+
+.profileuser {
+  font-family: cursive;
+  text-align-last: center;
+  font-weight: 300;
+  font-size: 45px;
 }

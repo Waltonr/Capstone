@@ -46,7 +46,7 @@ const SocialfeedPage = (props) => {
     return ( 
         <div>
             <h2>SOCIAL FEED</h2>
-            <CreatePost getAllPostProperty={setAllPosts}/>
+            <CreatePost create={posts}/>
             <DisplayPosts getAllPostsProperty={posts} />
             <DisplayReplies getAllRepliesProperty={replies} />
         </div>

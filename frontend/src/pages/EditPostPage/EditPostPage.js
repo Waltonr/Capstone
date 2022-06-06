@@ -27,16 +27,20 @@ const EditPost = (props) => {
         }
     }
 
+    function handleClick() {
+        
+    }
+
     return ( 
         <div>
             <h2>Edit Post Page</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     {user.username}
                     <input
                     type="text" 
                     name="text" 
-                    value={formData.age}
+                    value={formData.text}
                     onChange={handleInputChange}
                     /> 
             </label>
