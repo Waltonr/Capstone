@@ -54,7 +54,7 @@ const Post = (props) => {
         <div className="posttext">
           {post.text}
         </div>
-        <div>
+        <div className="likes">
           <button className="likedbutton" onClick={handleClick}>Like</button>
           {post.likes}
           <button className="dislikedbutton" onClick={handleClick}>Dislike</button>

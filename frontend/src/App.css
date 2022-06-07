@@ -29,8 +29,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  color: white;
-  background-color: steelblue;
+  color: darkmagenta;
 }
 
 .container {
@@ -78,15 +77,25 @@ button:hover {
 .posttext {
   font-size: initial;
   font-weight: 500;
+  padding: 25px;
 }
 .likedbutton {
 color: green;
 box-sizing: border-box;
 border-style: solid;
+padding-right: 2%;
 }
 
 .dislikedbutton {
   color: red;
+  padding-right: 7%;
+  padding-left: 25px;
+}
+
+.likes {
+  padding: 10px;
+  padding-right: 10px;
+  padding-left: 25%;
 }
 
 .profile {
