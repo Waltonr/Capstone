@@ -5,25 +5,28 @@ import useCustomForm from "../../hooks/useCustomForm";
 
 
 let initvalues = {
-    text: ""
+    text: "",
+    likes: "",
+    dislikes: "",
+    user_id: ""
 }
+
 
 const CreatePost = (props) => {
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newPost)
 
-    async function newPost() {
+    async function newPost(post) {
         try {
             let response = await axios.post("http://127.0.0.1:8000/api/post/",
             formData,
             {
                 headers: {
-                    Authorization: "Bearer " + token
-                }
+                    Authorization: "Bearer " + token,
+                },
             }
             );
             console.log(response.data)
-            props.getAllPostProperty(response.data)
         } catch (error) {
             console.log("error with creating post")
             
@@ -32,18 +35,19 @@ const CreatePost = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="cpdiv">
                 <label>
-                    Post:{""}
+                    I Want To Say:{""}
                     <input
                      type="text" 
                      name="text" 
                      value={formData.text}
                      onChange={handleInputChange}
-                     />    
+                     className="cpforminput" 
+                     />   
                 </label>
+            <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
             </div>
-            <button type='submit' onClick={handleSubmit}>Post</button>
         </form>
      );
 }

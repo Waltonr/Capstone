@@ -1,0 +1,22 @@
+.cpdiv {
+    margin: 35px;
+  }
+  
+  .cpforminput {
+    display: block;
+    width: 75%;
+    height: 50px;
+    margin: 5px;
+    padding: 3px 7px;
+    font-size: 15px;
+  }
+  
+  .cpbutton {
+    background-color: transparent;
+    border: 2px solid white;
+    color: purple;
+    font-size: 1rem;
+    font-family: inherit;
+    max-width: 50px;
+    padding: 0.5rem 0.5rem;
+  }
