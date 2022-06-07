@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import "./CreatePost.css"
@@ -7,27 +8,33 @@ import "./CreatePost.css"
 
 let initvalues = {
     text: "",
-    likes: "",
-    dislikes: "",
-    user_id: ""
+    likes: 0,
+    dislikes: 0
+
 }
 
 
 const CreatePost = (props) => {
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newPost)
+    const navigate = useNavigate()
+    const refreshPage = () => {
+        navigate(0);
+    }
 
     async function newPost(post) {
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/post/",
-            formData,
-            {
-                headers: {
-                    Authorization: "Bearer " + token,
-                },
-            }
+            let response = await axios.post(
+                "http://127.0.0.1:8000/api/post/",
+                formData,
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                }
             );
             console.log(response.data)
+            refreshPage()
         } catch (error) {
             console.log("error with creating post")
             
