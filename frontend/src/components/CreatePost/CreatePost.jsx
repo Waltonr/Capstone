@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
+import "./CreatePost.css"
 
 
 let initvalues = {
@@ -46,7 +47,7 @@ const CreatePost = (props) => {
                      className="cpforminput" 
                      />   
                 </label>
-            <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
+                <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
             </div>
         </form>
      );

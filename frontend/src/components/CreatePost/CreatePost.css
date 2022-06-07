@@ -4,11 +4,11 @@
   
   .cpforminput {
     display: block;
-    width: 75%;
-    height: 50px;
-    margin: 5px;
-    padding: 3px 7px;
-    font-size: 15px;
+    width: 80%;
+    height: 60px;
+    margin: 10px;
+    padding: 4px 10px;
+    font-size: 14px;
   }
   
   .cpbutton {
@@ -19,4 +19,5 @@
     font-family: inherit;
     max-width: 50px;
     padding: 0.5rem 0.5rem;
+    padding-left: 75%;
   }

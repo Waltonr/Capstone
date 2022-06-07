@@ -32,7 +32,7 @@ const CreateReply = (props) => {
         <form onSubmit={handleSubmit}>
             <div>
                 <label>
-                    Reply:{""}
+                    Reply{""}
                     <input
                      type="text" 
                      name="text" 
