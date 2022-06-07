@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 import useCustomForm from "../../hooks/useCustomForm"
 
@@ -11,10 +12,11 @@ let initvalues = {
 const EditInfo = (props) => {
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editInformation)
+    const navigate = useNavigate()
 
     async function editInformation() {
         try {
-            let response = await axios.put("http://127.0.0.1:8000/api/information/1",
+            let response = await axios.put("http://127.0.0.1:8000/api/information/1/",
             formData,
             {
                 headers: {
@@ -22,6 +24,8 @@ const EditInfo = (props) => {
                 }
             }
             );
+            console.log(response.data)
+            navigate("/profile")
         } catch (error) {
             console.log("error with editing info")
             
