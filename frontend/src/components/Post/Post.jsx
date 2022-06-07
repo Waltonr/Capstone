@@ -48,8 +48,8 @@ const Post = (props) => {
     return ( 
       <div className="post">
         <div>
-          <Link to="profile">{user.username}</Link>
-          <Link to="editpost">edit</Link>
+          <Link className="userlink" to="profile">{user.username}</Link>
+          <Link className="editlink" to="editpost">edit</Link>
         </div>
         <div className="posttext">
           {post.text}

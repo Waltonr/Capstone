@@ -70,6 +70,8 @@ button:hover {
   box-sizing: border-box;
   border-style: hidden;
   flex-wrap: wrap;
+  border-bottom-style: ridge;
+  padding: 20px;
 }
 
 
@@ -77,11 +79,13 @@ button:hover {
   font-size: initial;
   font-weight: 500;
 }
-.likedbutton:hover {
+.likedbutton {
 color: green;
+box-sizing: border-box;
+border-style: solid;
 }
 
-.dislikedbutton:hover {
+.dislikedbutton {
   color: red;
 }
 
@@ -94,4 +98,29 @@ color: green;
   text-align-last: center;
   font-weight: 300;
   font-size: 45px;
+}
+
+
+.socialfeed {
+  padding: 20px;
+}
+
+.socialfeedname {
+  text-align: center;
+}
+
+.formcontrol {
+  border-bottom-style: ridge;
+}
+
+.userlink {
+  padding-right: 5rem;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.editlink {
+  padding-left: 5rem;
+  font-weight: 300;
+  font-size: 17px;
 }

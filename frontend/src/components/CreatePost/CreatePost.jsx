@@ -35,7 +35,7 @@ const CreatePost = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="cpdiv">
                 <label>
                     I Want To Say:{""}
                     <input
@@ -43,10 +43,10 @@ const CreatePost = (props) => {
                      name="text" 
                      value={formData.text}
                      onChange={handleInputChange}
-                     className="forminput" 
+                     className="cpforminput" 
                      />   
                 </label>
-            <button type='submit' onClick={handleSubmit}>Post</button>
+            <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
             </div>
         </form>
      );
