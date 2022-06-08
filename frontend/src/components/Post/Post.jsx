@@ -6,33 +6,12 @@ import axios from "axios";
 import useCustomForm from "../../hooks/useCustomForm";
 
 
-let initvalues = {
-  text: ""
-}
 const Post = (props) => {
     const { post} = props
 
     const [user, token] = useAuth() 
-    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editPost)
     const [likedButton, setLikedButton] = useState("inactive");
     const [dislikedButton, setDislikedButton] = useState("inactive");
-
-    async function editPost() {
-      try {
-        let response = await axios.put("http://127.0.0.1:8000/api/post/1/",
-        {
-            headers: {
-              Authorization: "Bearer " + token
-            }
-        }
-        );
-      } catch (error) {
-        console.log("error with editing post")
-      }
-    }
-
-    function updatePost() {
-    }
 
 
     function handleClick() {

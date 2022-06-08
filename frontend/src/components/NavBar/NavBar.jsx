@@ -26,6 +26,9 @@ const Navbar = () => {
           <button onClick={() => navigate("/socialfeed")}>Social Feed</button>
         </li>
         <li>
+          <button onClick={() => navigate("/dms")}>DMs</button>
+        </li>
+        <li>
           <button onClick={() => navigate("/profile")}>Profile</button>
         </li>
       </ul>

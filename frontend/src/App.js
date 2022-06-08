@@ -10,6 +10,7 @@ import SocialfeedPage from "./pages/SocialfeedPage/SocialfeedPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditInfoPage from "./pages/EditInfoPage/EditInfoPage";
 import EditPostPage from "./pages/EditPostPage/EditPostPage";
+import DirectMessanger from "./pages/DirectMessage/DirectMessage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
         <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
         <Route path="/socialfeed/editpost" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
+        <Route path="/dms" element={<PrivateRoute><DirectMessanger /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>
