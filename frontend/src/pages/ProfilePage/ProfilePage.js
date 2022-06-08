@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CreateRecommendation from "../../components/CreateRecommendation/CreateRecommendation";
+import DisplayRecommendation from "../../components/DisplayRecommedList/DisplayRecommendList";
 
 const Profile = (props) => {
 
@@ -40,7 +42,6 @@ const Profile = (props) => {
         getInformation();
       }, [token]);
 
-
     return (
         <div className="profile">
             <h2 className="profileuser">{user.username}</h2>
@@ -70,32 +71,11 @@ const Profile = (props) => {
                 </tbody>
               </table>
             </div>
+            <CreateRecommendation />
             <div>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>MY RECOMMEDENDATIONS</th>
-                    <Link to="editrecommend">edit</Link>
-                  </tr>
-                </thead>
-                <tbody>
-                    {recommends &&
-                          recommends.map((recommend, index) => (
-                              <tr key={index}>
-                                  <td>Location:</td>
-                                  <td>{recommend.location}</td>
-                              </tr>
-                          ))}
-                    {recommends &&
-                          recommends.map((recommend, index) => (
-                              <tr key={index}>
-                                  <td>Housing:</td>
-                                  <td>{recommend.housing}</td>
-                              </tr>
-                          ))}
-                </tbody>
-              </table>
+              <DisplayRecommendation getAllRecommendsProperty={recommends}/>
             </div>
+
         </div>
      );
 }
