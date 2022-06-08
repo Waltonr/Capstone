@@ -6,17 +6,19 @@ const DisplayRecommendation = (props) => {
 
 
     return (
-        <Fragment>
-            {props.getAllRecommendsProperty &&
-                props.getAllRecommendsProperty.map((recommends, index) => {
-                    return(
-                        <p className="form-control" key={recommends.id}>
-                            <Recommendation recommends={recommends} />
-                        </p>
-                    )
-                    }
-            )}
-        </Fragment> 
+        <div>
+            <Fragment>
+                {props.getAllRecommendsProperty &&
+                    props.getAllRecommendsProperty.map((recommends, index) => {
+                        return(
+                            <p className="form-control" key={recommends.id}>
+                                <Recommendation recommends={recommends} />
+                            </p>
+                        )
+                        }
+                )}
+            </Fragment> 
+        </div>
     );
 }
  

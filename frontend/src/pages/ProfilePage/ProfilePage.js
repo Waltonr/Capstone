@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CreateRecommendation from "../../components/CreateRecommendation/CreateRecommendation";
 import DisplayRecommendation from "../../components/DisplayRecommedList/DisplayRecommendList";
+import "./ProfilePage.css"
 
 const Profile = (props) => {
 
@@ -44,13 +45,13 @@ const Profile = (props) => {
 
     return (
         <div className="profile">
-            <h2 className="profileuser">{user.username}</h2>
+            <h3 className="profileuser">{user.username}'s   Profile</h3>
             <div>
-              <table className="table">
+              <table className="tableinfo">
                 <thead>
                   <tr>
                     <th>INFORMATION</th>
-                    <Link to="editinfo">edit</Link>
+                    <Link className="editlink" to="editinfo">edit</Link>
                   </tr>
                 </thead>
                 <tbody>
@@ -71,8 +72,9 @@ const Profile = (props) => {
                 </tbody>
               </table>
             </div>
-            <CreateRecommendation />
-            <div>
+            <div className="table">
+              <p className="p">My Recommendations</p>
+              <CreateRecommendation />
               <DisplayRecommendation getAllRecommendsProperty={recommends}/>
             </div>
 

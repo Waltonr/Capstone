@@ -1,0 +1,27 @@
+.p {
+    font-weight: 600;
+    font-style: normal;
+    
+}
+
+.profile {
+    text-align: -webkit-center;
+  }
+  
+  .profileuser {
+    font-family: cursive;
+    text-align-last: center;
+    font-weight: 200;
+    font-size: 40px;
+  }
+  
+.tableinfo {
+    box-sizing: border-box;
+    border-style: double;
+    border-color: #a7a8cd;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+  }

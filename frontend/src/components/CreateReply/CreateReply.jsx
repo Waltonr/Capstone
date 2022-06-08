@@ -29,7 +29,7 @@ const CreateReply = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <div>
                 <label>
                     Reply{""}
@@ -38,6 +38,7 @@ const CreateReply = (props) => {
                      name="text" 
                      value={formData.text}
                      onChange={handleInputChange}
+                     className="forminput"
                      />    
                 </label>
             </div>
