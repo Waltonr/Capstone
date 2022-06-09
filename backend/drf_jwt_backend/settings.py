@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'post',
     'replies',
+    'non_recommendations',
     'recommendations',
     'locations',
     'housing',
