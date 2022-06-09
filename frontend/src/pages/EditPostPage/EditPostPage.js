@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
+import Post from "../../components/Post/Post";
 import axios from "axios";
 
 let initvalues = {
@@ -13,10 +14,10 @@ const EditPost = (props) => {
     const navigate = useNavigate()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editPost)
 
-    async function editPost() {
+    async function editPost(post) {
         try {
             let response = await axios.put(
-                "http://127.0.0.1:8000/api/post/1/",
+                "http://127.0.0.1:8000/api/post/" + post.id,
                 formData,
                 {
                     headers: {
