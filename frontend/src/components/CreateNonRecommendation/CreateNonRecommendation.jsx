@@ -17,7 +17,7 @@ const CreateNonRecommendation = (props) => {
     async function newNonRecommend(post) {
         try {
             let response = await axios.post(
-                "http://127.0.0.1:8000/api/recommendations/",
+                "http://127.0.0.1:8000/api/nonrecommendations/",
                 formData,
                 {
                     headers: {
