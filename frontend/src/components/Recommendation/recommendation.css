@@ -1,0 +1,27 @@
+
+
+
+
+.editlink {
+    padding-left: 75%;
+    font-weight: 300;
+    font-size: 17px;
+  }
+
+
+.recommend {
+    box-sizing: border-box;
+    border-bottom-style: inset;
+    border-bottom-color: #a7a8cd;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: purple;
+    font-size: 1rem;
+    font-family: inherit;
+    max-width: 50px;
+    padding: 0.5rem 0.5rem;
+    padding-left: 60%;
+  }

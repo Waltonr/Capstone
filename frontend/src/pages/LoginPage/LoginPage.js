@@ -19,7 +19,7 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
-    <div className="container">
+    <div className="containerlogin">
       <form className="form" onSubmit={handleSubmit}>
         <label>
           Username:{" "}
@@ -33,7 +33,7 @@ const LoginPage = () => {
         <label>
           Password:{" "}
           <input
-            type="text"
+            type="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}

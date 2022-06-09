@@ -9,27 +9,32 @@ li {
 }
 
 .navBar {
-  background: lavender;
+  background: #a7a8cd;
   box-shadow: 4px 2px 5px gray;
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 1.5rem 2rem;
 }
 
 .navBar button {
   background: transparent;
-  border: 2px solid lavender;
-  color: white;
+  border: 2px solid #a7a8cd;
+  color: #454555;
   padding: 0.4rem 0.5rem;
 }
 
 .navBar button:hover {
   background: transparent;
-  color: purple;
+  color: white;
   cursor: pointer;
 }
+
 
 .brand {
   cursor: pointer;
   font-size: 2rem;
+}
+
+.name {
+  color: #454555;
 }

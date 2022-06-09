@@ -19,7 +19,7 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid transparent;
   color: purple;
   font-size: 1rem;
   font-family: inherit;
@@ -30,6 +30,10 @@ button {
 button:hover {
   cursor: pointer;
   color: darkmagenta;
+}
+
+body {
+  background-image: radial-gradient(circle, #ffffff, #fbfafe, #f6f5fd, #f2f1fc, #edecfb, #e5e5f7, #deddf3, #d6d6ef, #cacae6, #bebfde, #b3b3d5, #a7a8cd);
 }
 
 .container {
@@ -59,10 +63,12 @@ button:hover {
 .table {
   box-sizing: border-box;
   border-style: double;
-  border-color: lavender;
+  border-color: #a7a8cd;
   flex-wrap: wrap;
-  padding: 15px;
-  margin: 35px
+  padding: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
 }
 
 .post {
@@ -70,14 +76,15 @@ button:hover {
   border-style: hidden;
   flex-wrap: wrap;
   border-bottom-style: ridge;
-  padding: 20px;
+  padding: 25x;
+  margin: 55px;
 }
 
 
 .posttext {
   font-size: initial;
   font-weight: 500;
-  padding: 25px;
+  padding: 50px;
 }
 .likedbutton {
 color: green;
@@ -88,27 +95,19 @@ padding-right: 2%;
 
 .dislikedbutton {
   color: red;
-  padding-right: 7%;
+  padding-right: 8%;
   padding-left: 25px;
+}
+
+.reply {
+  padding-left: 75%;
 }
 
 .likes {
   padding: 10px;
   padding-right: 10px;
-  padding-left: 25%;
+  padding-left: 40%;
 }
-
-.profile {
-  text-align: -webkit-center;
-}
-
-.profileuser {
-  font-family: cursive;
-  text-align-last: center;
-  font-weight: 300;
-  font-size: 45px;
-}
-
 
 .socialfeed {
   padding: 20px;
@@ -116,6 +115,7 @@ padding-right: 2%;
 
 .socialfeedname {
   text-align: center;
+  color: #454555;
 }
 
 .formcontrol {
@@ -129,7 +129,7 @@ padding-right: 2%;
 }
 
 .editlink {
-  padding-left: 5rem;
+  padding-left: 80%;
   font-weight: 300;
   font-size: 17px;
 }

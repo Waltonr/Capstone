@@ -1,8 +1,9 @@
-import React from "react"
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
-import useAuth from "../../hooks/useAuth"
-import useCustomForm from "../../hooks/useCustomForm"
+import React from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useCustomForm from "../../hooks/useCustomForm";
+import "./EditInfo.css";
 
 let initvalues = {
     age: 0,

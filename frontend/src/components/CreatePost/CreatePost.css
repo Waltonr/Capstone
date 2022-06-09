@@ -1,5 +1,7 @@
 .cpdiv {
-    margin: 35px;
+    margin: 40px;
+    padding: 40px;
+    padding-left: 16%;
   }
   
   .cpforminput {
@@ -13,7 +15,7 @@
   
   .cpbutton {
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid transparent;
     color: purple;
     font-size: 1rem;
     font-family: inherit;
