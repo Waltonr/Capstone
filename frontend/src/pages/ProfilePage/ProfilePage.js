@@ -31,7 +31,7 @@ const Profile = (props) => {
         };
         const getNonRecommendations = async () => {
           try {
-            let response = await axios.get("http://127.0.0.1:8000/api/nonrecommendations/", {
+            let response = await axios.get("http://127.0.0.1:8000/api/non_recommendations/", {
               headers: {
                 Authorization: "Bearer " + token,
               },

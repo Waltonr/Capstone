@@ -15,7 +15,7 @@ const NonRecommendation = (props) => {
     }
     async function deleteNonRecommend(nonrecommend) {
       try {
-        let response = await axios.delete("http://127.0.0.1:8000/api/nonrecommendations/1/", {
+        let response = await axios.delete("http://127.0.0.1:8000/api/non_recommendations/1/", {
           headers: {
             Authorization: "Bearer " + token,
           },
