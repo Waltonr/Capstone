@@ -4,12 +4,15 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CreateRecommendation from "../../components/CreateRecommendation/CreateRecommendation";
 import DisplayRecommendation from "../../components/DisplayRecommedList/DisplayRecommendList";
+import CreateNonRecommendation from "../../components/CreateNonRecommendation/CreateNonRecommendation";
+import DisplayNonRemmendation from "../../components/DisplayNonRecommendList/DisplayNonRecommendList";
 import "./ProfilePage.css"
 
 const Profile = (props) => {
 
     const [user, token] = useAuth();
     const [recommends, setAllRecommends] = useState([]);
+    const [nonrecommends, setAllNonRecommends] = useState([]);
     const [info, setAllInfo] = useState([]);
 
     useEffect(() => {
@@ -26,6 +29,19 @@ const Profile = (props) => {
             console.log("error with get recommend list");
           }
         };
+        const getNonRecommendations = async () => {
+          try {
+            let response = await axios.get("http://127.0.0.1:8000/api/non_recommendations/", {
+              headers: {
+                Authorization: "Bearer " + token,
+              },
+            });
+            console.log(response.data)
+            setAllNonRecommends(response.data);
+          } catch (error) {
+            console.log("error with get nonrecommend list");
+          }
+        };
         const getInformation = async () => {
           try {
             let response = await axios.get("http://127.0.0.1:8000/api/information/", {
@@ -40,6 +56,7 @@ const Profile = (props) => {
           }
         };
         getRecommendations();
+        getNonRecommendations();
         getInformation();
       }, [token]);
 
@@ -74,8 +91,14 @@ const Profile = (props) => {
             </div>
             <div className="table">
               <p className="p">My Recommendations</p>
-              <CreateRecommendation />
-              <DisplayRecommendation getAllRecommendsProperty={recommends}/>
+              <div>   
+                <CreateRecommendation />
+                <DisplayRecommendation getAllRecommendsProperty={recommends}/>
+              </div>
+              <div>
+                <CreateNonRecommendation />
+                <DisplayNonRemmendation getAllNonRecommendsProperty={nonrecommends} />
+              </div>
             </div>
 
         </div>
