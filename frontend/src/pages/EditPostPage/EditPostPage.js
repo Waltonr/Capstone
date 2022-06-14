@@ -16,7 +16,6 @@ const EditPost = (props) => {
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editPost);
 
     async function editPost(post) {
-        const formData === post
         try {
             let response = await axios.put(
                 `http://127.0.0.1:8000/api/post/${id}/`,

@@ -35,7 +35,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
-        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+        <Route path="/profile/:id" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
         <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
         <Route path="/editpost/:id" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
         <Route path="/dms" element={<PrivateRoute><DirectMessanger /></PrivateRoute>} />
