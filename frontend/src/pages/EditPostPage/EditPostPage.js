@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import Post from "../../components/Post/Post";
@@ -10,14 +10,16 @@ let initvalues = {
 }
 
 const EditPost = (props) => {
-    const [user, token] = useAuth()
-    const navigate = useNavigate()
-    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editPost)
+    const { id } = useParams();
+    const [user, token] = useAuth();
+    const navigate = useNavigate();
+    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editPost);
 
     async function editPost(post) {
+        const formData === post
         try {
             let response = await axios.put(
-                "http://127.0.0.1:8000/api/post/" + post.id,
+                `http://127.0.0.1:8000/api/post/${id}/`,
                 formData,
                 {
                     headers: {
@@ -26,7 +28,7 @@ const EditPost = (props) => {
                 }
             );
             console.log(response.data)
-            navigate("/")
+            navigate("/socialfeed")
         } catch (error) {
             console.log("error with editing post")
             
@@ -44,7 +46,7 @@ const EditPost = (props) => {
                 onChange={handleInputChange}
                 /> 
         </label>
-        <button type='submit'>Submit</button>
+        <button type="submit">Submit</button>
         </form>
      );
 }

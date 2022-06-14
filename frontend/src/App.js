@@ -37,7 +37,7 @@ function App() {
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
         <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
         <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
-        <Route path="/socialfeed/editpost" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
+        <Route path="/editpost/:id" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
         <Route path="/dms" element={<PrivateRoute><DirectMessanger /></PrivateRoute>} />
       </Routes>
       <Footer />

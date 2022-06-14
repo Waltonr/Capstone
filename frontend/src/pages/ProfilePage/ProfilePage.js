@@ -89,15 +89,20 @@ const Profile = (props) => {
                 </tbody>
               </table>
             </div>
-            <div className="table">
-              <p className="p">My Recommendations</p>
-              <div>   
-                <CreateRecommendation />
-                <DisplayRecommendation getAllRecommendsProperty={recommends}/>
+            <div>
+              <div className="table">
+                <p className="p">My Recommendations !</p>
+                <div>   
+                  <CreateRecommendation />
+                  <DisplayRecommendation getAllRecommendsProperty={recommends}/>
+                </div>
               </div>
-              <div>
-                <CreateNonRecommendation />
-                <DisplayNonRemmendation getAllNonRecommendsProperty={nonrecommends} />
+              <div className="table">
+                <div>
+                  <p className="p">My Non-Recommendations !</p>
+                  <CreateNonRecommendation />
+                  <DisplayNonRemmendation getAllNonRecommendsProperty={nonrecommends} />
+                </div>
               </div>
             </div>
 
