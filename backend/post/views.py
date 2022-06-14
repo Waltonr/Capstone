@@ -29,13 +29,19 @@ def user_post(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT'])
+@api_view(['PUT', 'GET', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def edit_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     if request.method == 'PUT':
-        post = get_object_or_404(Post, pk=pk)
         serializer = PostSerializer(post, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save(post=request.data)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'GET':
+        serializer = PostSerializer(post)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'DELETE':
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
