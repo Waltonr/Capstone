@@ -10,9 +10,9 @@ const DisplayPosts = (props) => {
             {props.getAllPostsProperty &&
                 props.getAllPostsProperty.map((post, index) => {
                     return(
-                        <p className="form-control" key={post.id}>
-                            <Post post={post} />
-                        </p>
+                        <tr className="form-control" key={post.id}>
+                            <Post post={post} userid={post.user_id} />
+                        </tr>
                     )
                     }
             )}

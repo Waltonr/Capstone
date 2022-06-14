@@ -8,7 +8,7 @@ import useCustomForm from "../../hooks/useCustomForm";
 
 const Post = (props) => {
     const { post } = props
-
+    const { userid } = props
     const [user, token] = useAuth() 
     const [likedButton, setLikedButton] = useState("inactive");
     const [dislikedButton, setDislikedButton] = useState("inactive");
@@ -27,7 +27,7 @@ const Post = (props) => {
     return ( 
       <div className="post">
         <div>
-          <Link className="userlink" to={`/profile/${user.user_id}`}>{user.username}</Link>
+          <Link className="userlink" to={`/profile/${user.user_id}`}>{username}</Link>
           <Link className="editlink" to={`/editpost/${post.id}`} >edit</Link>
         </div>
         <div className="posttext">

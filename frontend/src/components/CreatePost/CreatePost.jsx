@@ -9,7 +9,8 @@ import "./CreatePost.css"
 let initvalues = {
     text: "",
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    user_id: ""
 
 }
 
@@ -51,7 +52,8 @@ const CreatePost = (props) => {
                      name="text" 
                      value={formData.text}
                      onChange={handleInputChange}
-                     className="cpforminput" 
+                     className="cpforminput"
+                     user_id={user.user_id}
                      />   
                 </label>
                 <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
