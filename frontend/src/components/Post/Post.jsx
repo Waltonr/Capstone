@@ -11,9 +11,28 @@ const Post = (props) => {
     const { post } = props;
     const { userid } = props;
     const { id } = useParams();
+    const [memberName, setMemberName] = useState();
     const [user, token] = useAuth(); 
     const [likedButton, setLikedButton] = useState("inactive");
     const [dislikedButton, setDislikedButton] = useState("inactive");
+
+    
+    
+    async function getMemberName() {
+      try {
+        let response = await axios.get(`http://127.0.0.1:8000/api/auth/${userid}/`,
+        {
+          headers: {
+            Authorization: "Bearer " + token
+          }
+        }
+        );
+        console.log(response.data)
+        setMemberName(response.data);
+      } catch (error) {
+        console.log("error with getting user's name")
+      }
+    }
 
 
     function handleClick() {
@@ -29,7 +48,7 @@ const Post = (props) => {
     return ( 
       <div className="post">
         <div>
-          <Link className="userlink" to={`/profile/${userid}`}> username</Link>
+          <Link className="userlink" to={`/profile/${userid}`}> {memberName}</Link>
           <Link className="editlink" to={`/editpost/${post.id}`} likes={post.likes} dislikes={post.dislikes} >edit</Link>
         </div>
         <div className="posttext">
