@@ -48,7 +48,7 @@ const Post = (props) => {
     return ( 
       <div className="post">
         <div>
-          <Link className="userlink" to={`/profile/${userid}`}> {memberName}</Link>
+          <Link className="userlink" to={`/profile/${userid}`}> {userid}</Link>
           <Link className="editlink" to={`/editpost/${post.id}`} likes={post.likes} dislikes={post.dislikes} >edit</Link>
         </div>
         <div className="posttext">

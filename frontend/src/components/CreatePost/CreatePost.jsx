@@ -56,7 +56,7 @@ const CreatePost = (props) => {
                      user_id={user.user_id}
                      />   
                 </label>
-                <button className="cpbutton" type='submit' onClick={handleSubmit}>Post</button>
+                <button className="cpbutton" type='submit'>Post</button>
             </div>
         </form>
      );
