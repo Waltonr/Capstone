@@ -1,4 +1,3 @@
-from webbrowser import get
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
@@ -12,12 +11,13 @@ from post.models import Post
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-def user_reply(request):
+def user_reply(request, pk):
     print('User', f'{request.data} {request.user.email} {request.user.username}')
+    post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
         serializer = ReplySerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user)
+            serializer.save(user_id=request.user.id, post_id=post.id)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
