@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 
@@ -9,9 +10,13 @@ let initvalues = {
 }
 
 const CreateReply = (props) => {
-    const { postid } = props
-    const [user, token] = useAuth()
-    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newReply)
+    const { postid } = props;
+    const [user, token] = useAuth();
+    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newReply);
+    const navigate = useNavigate();
+    const refreshPage = () => {
+        navigate(0);
+    }
 
     async function newReply() {
         try {
@@ -23,9 +28,10 @@ const CreateReply = (props) => {
                 }
             }
             );
+            console.log(response.data)
+            refreshPage();
         } catch (error) {
-            console.log("error with creating reply")
-            
+            console.log("error with creating reply") 
         }
     }
 

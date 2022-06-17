@@ -19,7 +19,7 @@ const Post = (props) => {
     useEffect(() => {
       const getReplies = async() => {
         try {
-            let response = await axios.get("http://127.0.0.1:8000/api/replies/all/", {
+            let response = await axios.get(`http://127.0.0.1:8000/api/replies/${post.id}/`, {
                 headers: {
                     Authorization: "Bearer " + token,
                 },
@@ -27,7 +27,7 @@ const Post = (props) => {
             console.log(response.data)
             setAllReplies(response.data)
         } catch (error) {
-            console.log("error with get all replies")
+            console.log("error with get replies by post id")
         }
     };
     getReplies();
