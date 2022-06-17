@@ -9,12 +9,13 @@ let initvalues = {
 }
 
 const CreateReply = (props) => {
+    const { postid } = props
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newReply)
 
     async function newReply() {
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/replies/",
+            let response = await axios.post(`http://127.0.0.1:8000/api/replies/${postid}/`,
             formData,
             {
                 headers: {

@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import CreateReply from "../CreateReply/CreateReply";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import useCustomForm from "../../hooks/useCustomForm";
+import DisplayReplies from "../DisplayReplies/DisplayReplies";
+import CreateReply from "../CreateReply/CreateReply";
 
 
 const Post = (props) => {
     const { post } = props;
     const { userid } = props;
     const { id } = useParams();
+    const [replies, setAllReplies] = useState();
     const [memberName, setMemberName] = useState();
     const [user, token] = useAuth(); 
     const [likedButton, setLikedButton] = useState("inactive");
     const [dislikedButton, setDislikedButton] = useState("inactive");
 
-    
+    useEffect(() => {
+      const getReplies = async() => {
+        try {
+            let response = await axios.get("http://127.0.0.1:8000/api/replies/all/", {
+                headers: {
+                    Authorization: "Bearer " + token,
+                },
+            });
+            console.log(response.data)
+            setAllReplies(response.data)
+        } catch (error) {
+            console.log("error with get all replies")
+        }
+    };
+    getReplies();
+    }, [token])
     
     async function getMemberName() {
       try {
@@ -60,7 +75,8 @@ const Post = (props) => {
           <button className="dislikedbutton" onClick={handleClick}>Dislike</button>
           {post.dislikes}
         </div>
-        <CreateReply />
+        <CreateReply postid={post.id}/>
+        <DisplayReplies getAllRepliesProperty={replies}/>
       </div>
      );
 }
