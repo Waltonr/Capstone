@@ -47,22 +47,24 @@ const EditPost = (props) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>
-                    <input
-                     type="text" 
-                     name="text" 
-                     value={formData.text}
-                     onChange={handleInputChange}
-                     user_id={user.id}
-                     likes={likes}
-                     dislikes={dislikes}
-                    /> 
-                    <button type="submit">Edit</button>
-                </label>
-            </div>
-        </form>
+        <div className="form">
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        <input
+                        type="text" 
+                        name="text" 
+                        value={formData.text}
+                        onChange={handleInputChange}
+                        user_id={user.id}
+                        likes={likes}
+                        dislikes={dislikes}
+                        /> 
+                        <button type="submit">Edit</button>
+                    </label>
+                </div>
+            </form>
+        </div>
      );
 }
  

@@ -95,27 +95,48 @@ padding-right: 2%;
 
 .dislikedbutton {
   color: red;
-  padding-right: 8%;
+  padding-right: 18%;
   padding-left: 25px;
 }
 
 .reply {
-  padding-left: 75%;
+  padding-left: 10%;
+  box-sizing: border-box;
+  border-style: hidden;
+  flex-wrap: wrap;
+  border-bottom-style: ridge;
+}
+
+.replytext {
+  font-size: initial;
+  font-weight: 550;
+  padding: 20px;
+}
+
+.replyform {
+  padding-left: 30px;
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .likes {
   padding: 10px;
   padding-right: 10px;
-  padding-left: 40%;
+  padding-left: 70%;
 }
 
 .socialfeed {
   padding: 20px;
+  margin: 7rem;
 }
 
-.socialfeedname {
+.socialfeednamee {
   text-align: center;
   color: #454555;
+  font-size: 3rem;
 }
 
 .formcontrol {

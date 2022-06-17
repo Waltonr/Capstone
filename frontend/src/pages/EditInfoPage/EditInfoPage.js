@@ -36,32 +36,34 @@ const EditInfo = (props) => {
     return ( 
         <div>
             <h2>Edit Info Page</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Information
-                    </label>
-                    <label>
-                        Age:{""}
-                        <input
-                        type="text" 
-                        name="age" 
-                        value={formData.age}
-                        onChange={handleInputChange}
-                        />    
-                    </label>
-                    <label>
-                        About:{""}
-                        <input
-                        type="text" 
-                        name="about" 
-                        value={formData.about}
-                        onChange={handleInputChange}
-                        />    
-                    </label>
-                </div>
-                <button type='submit'>Submit</button>
-            </form>
+            <div className="form">
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>
+                            Information
+                        </label>
+                        <label>
+                            Age:{""}
+                            <input
+                            type="text" 
+                            name="age" 
+                            value={formData.age}
+                            onChange={handleInputChange}
+                            />    
+                        </label>
+                        <label>
+                            About:{""}
+                            <input
+                            type="text" 
+                            name="about" 
+                            value={formData.about}
+                            onChange={handleInputChange}
+                            />    
+                        </label>
+                    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
         </div>
      );
 }

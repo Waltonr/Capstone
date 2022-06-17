@@ -21,20 +21,20 @@ const Reply = (props) => {
         }
       }
     return ( 
-        <div>
+      <div className="reply">
         <table>
-        <tbody>
-            <tr>
-                <td>
-                    {user.username}
-                    {reply.text}
-                </td>
-            </tr>
-            <div>
-            <button className={likedButton} onClick={handleClick}></button>
-            <button className={dislikedButton} onClick={handleClick}></button>
-            </div>
-        </tbody>
+          <tbody>
+              <tr>
+                  <td>
+                      <p className="replytext">{user.username}:</p>
+                      <p className="replytext">{reply.text}</p>
+                  </td>
+              </tr>
+              <div>
+              <button className={likedButton} onClick={handleClick}></button>
+              <button className={dislikedButton} onClick={handleClick}></button>
+              </div>
+          </tbody>
         </table>
       </div>
      );

@@ -36,7 +36,7 @@ const CreateReply = (props) => {
     }
 
     return ( 
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="replyform" onSubmit={handleSubmit}>
             <div>
                 <label>
                     Reply{""}
