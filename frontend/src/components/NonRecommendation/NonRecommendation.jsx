@@ -21,7 +21,7 @@ const NonRecommendation = (props) => {
           Authorization: "Bearer " + token,
         },
       });
-      refreshPage()
+      refreshPage();
     } catch (error) {
       console.log("error with deleting nonrecommendation")
     }
@@ -30,7 +30,7 @@ const NonRecommendation = (props) => {
   return ( 
       <div>
         <div>
-          <Link className="editlink" to="editrecommend">edit</Link>
+          <Link className="editlink" to={`/editnonrecommendation/${nonRecommendId}`}>edit</Link>
         </div>
         <div className="nonrecommend">
           <p>Location: {nonRecommends.location}</p>

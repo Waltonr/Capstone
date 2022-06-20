@@ -34,7 +34,7 @@ const Recommendation = (props) => {
   return ( 
       <div>
         <div>
-          <Link className="editlink" to="editrecommend">edit</Link>
+          <Link className="editlink" to={`/editrecommendation/${recommendId}`}>edit</Link>
         </div>
         <div className="recommend">
           <p>Location: {recommends.location}</p>
