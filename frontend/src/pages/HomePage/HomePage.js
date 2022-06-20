@@ -1,10 +1,9 @@
 import React from "react";
+import girlsonbeachselfie from "../../images/girlsonbeachselfie.jpg"
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { Link } from "react-router-dom";
 
 import axios from "axios";
-import SocialfeedPage from "../SocialfeedPage/SocialfeedPage";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -31,6 +30,9 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>It's Time to Travel {user.username}!</h1>
+      <div>
+          <img src={girlsonbeachselfie} alt="girlsonbeachselfie" width="550" height="500"/>
+      </div>
     </div>
   );
 };

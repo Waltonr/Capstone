@@ -41,7 +41,7 @@ const CreateRecommendation = (props) => {
         }
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="pform" onSubmit={handleSubmit}>
             <div>
                 <label>
                     Location:{""}

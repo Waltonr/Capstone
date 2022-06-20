@@ -64,8 +64,6 @@ body {
   border-bottom-style: ridge;
 }
 
-
-
 .post {
   box-sizing: border-box;
   border-style: hidden;
@@ -148,3 +146,4 @@ padding-right: 2%;
   font-weight: 300;
   font-size: 17px;
 }
+

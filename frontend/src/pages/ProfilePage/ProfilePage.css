@@ -31,9 +31,9 @@
     border-style: double;
     border-color: #a7a8cd;
     flex-wrap: wrap;
-    padding: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
+    padding: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 10%;
     width: 50%;
     flex: wrap;
@@ -41,4 +41,14 @@
   
   .tables {
     display: flex;
+    justify-content: center;
+  }
+
+  .pform {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 15px;
   }
