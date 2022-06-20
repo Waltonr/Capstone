@@ -5,16 +5,25 @@ import useAuth from "../../hooks/useAuth";
 
 let initvalues = {
     location: "",
-    housing: ""
+    housing: "",
+    user_id: ""
 
 }
 
 const CreateNonRecommendation = (props) => {
-    const [user, token] = useAuth()
-    const [formData, handleSubmit, handleInputChange] = useCustomForm(initvalues, newNonRecommend)
-    const navigate = useNavigate()
+    const [user, token] = useAuth();
+    const [formData, handleInputChange] = useCustomForm(initvalues, newNonRecommend);
+    const navigate = useNavigate();
+    const refreshPage = () => {
+        navigate(0);
+    }
 
-    async function newNonRecommend(post) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        newNonRecommend(formData);
+      };
+
+    async function newNonRecommend() {
         try {
             let response = await axios.post(
                 "http://127.0.0.1:8000/api/non_recommendations/",
@@ -26,7 +35,7 @@ const CreateNonRecommendation = (props) => {
                 }
             );
             console.log(response.data)
-            navigate("/profile")
+            refreshPage();
         } catch (error) {
             console.log("error with creating nonrecommendation")
             
@@ -42,6 +51,7 @@ const CreateNonRecommendation = (props) => {
                  name="location" 
                  value={formData.location}
                  onChange={handleInputChange}
+                 user_id={user.user_id}
                  />   
             </label>
             <label>
@@ -51,6 +61,7 @@ const CreateNonRecommendation = (props) => {
                  name="housing" 
                  value={formData.housing}
                  onChange={handleInputChange}
+                 user_id={user.user_id}
                  />   
             </label>
             <button type='submit'>Add</button>

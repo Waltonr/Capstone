@@ -5,16 +5,24 @@ import useAuth from "../../hooks/useAuth";
 
 let initvalues = {
     location: "",
-    housing: ""
-
+    housing: "",
+    user_id: ""
 }
 
 const CreateRecommendation = (props) => {
-    const [user, token] = useAuth()
-    const [formData, handleSubmit, handleInputChange] = useCustomForm(initvalues, newRecommend)
-    const navigate = useNavigate()
+    const [user, token] = useAuth();
+    const [formData, handleInputChange] = useCustomForm(initvalues, newRecommend);
+    const navigate = useNavigate();
+    const refreshPage = () => {
+        navigate(0);
+    }
 
-    async function newRecommend(post) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        newRecommend(formData);
+      };
+
+    async function newRecommend() {
         try {
             let response = await axios.post(
                 "http://127.0.0.1:8000/api/recommendations/",
@@ -26,36 +34,38 @@ const CreateRecommendation = (props) => {
                 }
             );
             console.log(response.data)
-            navigate("/profile")
+            refreshPage();
         } catch (error) {
             console.log("error with creating recommendation")
             
         }
     }
-    return ( 
+    return (
         <form onSubmit={handleSubmit}>
-        <div>
-            <label>
-                Location:{""}
-                <input
-                 type="text" 
-                 name="location" 
-                 value={formData.location}
-                 onChange={handleInputChange}
-                 />   
-            </label>
-            <label>
-                Housing:{""}
-                <input
-                 type="text" 
-                 name="housing" 
-                 value={formData.housing}
-                 onChange={handleInputChange}
-                 />   
-            </label>
-            <button type='submit'>Add</button>
-        </div>
-    </form>
+            <div>
+                <label>
+                    Location:{""}
+                    <input
+                    type="text" 
+                    name="location" 
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    user_id={user.user_id}
+                    />   
+                </label>
+                <label>
+                    Housing:{""}
+                    <input
+                    type="text" 
+                    name="housing" 
+                    value={formData.housing}
+                    onChange={handleInputChange}
+                    user_id={user.user_id}
+                    />   
+                </label>
+                <button type='submit'>Add</button>
+            </div>
+        </form>
      );
 }
  

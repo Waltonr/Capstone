@@ -23,7 +23,7 @@ const CreatePost = (props) => {
         navigate(0);
     }
 
-    async function newPost(post) {
+    async function newPost() {
         try {
             let response = await axios.post(
                 "http://127.0.0.1:8000/api/post/",
@@ -35,7 +35,7 @@ const CreatePost = (props) => {
                 }
             );
             console.log(response.data)
-            refreshPage()
+            refreshPage();
         } catch (error) {
             console.log("error with creating post")
             
