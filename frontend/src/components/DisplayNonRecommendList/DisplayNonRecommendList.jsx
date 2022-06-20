@@ -9,10 +9,10 @@ const DisplayNonRecommendation = (props) => {
         <div>
             <Fragment>
                 {props.getAllNonRecommendsProperty &&
-                    props.getAllNonRecommendsProperty.map((nonrecommends, index) => {
+                    props.getAllNonRecommendsProperty.map((nonRecommends, index) => {
                         return(
-                            <p className="form-control" key={nonrecommends.id}>
-                                <NonRecommendation nonrecommends={nonrecommends} />
+                            <p className="form-control" key={nonRecommends.id}>
+                                <NonRecommendation nonRecommends={nonRecommends} nonRecommendId={nonRecommends.id} />
                             </p>
                         )
                         }

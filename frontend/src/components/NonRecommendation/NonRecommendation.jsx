@@ -7,37 +7,38 @@ import "./NonRecommendation.css"
 
 
 const NonRecommendation = (props) => {
-  const [user, token] = useAuth()
-    const { nonrecommends } = props
-    const navigate = useNavigate()
-    const refreshPage = () => {
-      navigate(0);
+  const { nonRecommends } = props;
+  const { nonRecommendId } = props;
+  const [user, token] = useAuth();
+  const navigate = useNavigate();
+  const refreshPage = () => {
+    navigate(0);
+  }
+  async function deleteNonRecommend() {
+    try {
+      let response = await axios.delete(`http://127.0.0.1:8000/api/non_recommendations/${nonRecommendId}/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      refreshPage()
+    } catch (error) {
+      console.log("error with deleting nonrecommendation")
     }
-    async function deleteNonRecommend(nonrecommend) {
-      try {
-        let response = await axios.delete("http://127.0.0.1:8000/api/non_recommendations/1/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        refreshPage()
-      } catch (error) {
-        console.log("error with deleting nonrecommendation")
-      }
-    }
+  }
 
-    return ( 
+  return ( 
+      <div>
         <div>
-          <div>
-            <Link className="editlink" to="editrecommend">edit</Link>
-          </div>
-          <div className="nonrecommend">
-            <p>Location: {nonrecommends.location}</p>
-            <p>Housing: {nonrecommends.housing}</p>
-            <button className="delete" onClick={deleteNonRecommend}>Delete</button>
-          </div>
-      </div>
-     );
+          <Link className="editlink" to="editrecommend">edit</Link>
+        </div>
+        <div className="nonrecommend">
+          <p>Location: {nonRecommends.location}</p>
+          <p>Housing: {nonRecommends.housing}</p>
+          <button className="delete" onClick={deleteNonRecommend}>Delete</button>
+        </div>
+    </div>
+    );
 }
  
 export default NonRecommendation;

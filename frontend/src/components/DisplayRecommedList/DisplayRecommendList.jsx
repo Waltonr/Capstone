@@ -12,7 +12,7 @@ const DisplayRecommendation = (props) => {
                     props.getAllRecommendsProperty.map((recommends, index) => {
                         return(
                             <p className="form-control" key={recommends.id}>
-                                <Recommendation recommends={recommends} />
+                                <Recommendation recommends={recommends} recommendId={recommends.id} />
                             </p>
                         )
                         }

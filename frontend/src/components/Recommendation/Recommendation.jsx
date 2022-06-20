@@ -8,37 +8,38 @@ import "./recommendation.css"
 
 
 const Recommendation = (props) => {
+  const { recommends } = props
+  const { recommendId } = props
   const [user, token] = useAuth()
-    const { recommends } = props
-    const navigate = useNavigate()
-    const refreshPage = () => {
-      navigate(0);
+  const navigate = useNavigate()
+  const refreshPage = () => {
+    navigate(0);
+  }
+  async function deleteRecommend(recommend) {
+    try {
+      let response = await axios.delete(`http://127.0.0.1:8000/api/recommendations/${recommendId}/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      refreshPage()
+    } catch (error) {
+      console.log("error with deleting recommendation")
     }
-    async function deleteRecommend(recommend) {
-      try {
-        let response = await axios.delete("http://127.0.0.1:8000/api/recommendations/1/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        refreshPage()
-      } catch (error) {
-        console.log("error with deleting recommendation")
-      }
-    }
+  }
 
-    return ( 
+  return ( 
+      <div>
         <div>
-          <div>
-            <Link className="editlink" to="editrecommend">edit</Link>
-          </div>
-          <div className="recommend">
-            <p>Location: {recommends.location}</p>
-            <p>Housing: {recommends.housing}</p>
-            <button className="delete" onClick={deleteRecommend}>Delete</button>
-          </div>
-      </div>
-     );
+          <Link className="editlink" to="editrecommend">edit</Link>
+        </div>
+        <div className="recommend">
+          <p>Location: {recommends.location}</p>
+          <p>Housing: {recommends.housing}</p>
+          <button className="delete" onClick={deleteRecommend}>Delete</button>
+        </div>
+    </div>
+    );
 }
  
 export default Recommendation;
