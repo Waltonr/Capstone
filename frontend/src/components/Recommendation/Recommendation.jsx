@@ -15,14 +15,17 @@ const Recommendation = (props) => {
   const refreshPage = () => {
     navigate(0);
   }
-  async function deleteRecommend(recommend) {
+  async function deleteRecommend() {
     try {
-      let response = await axios.delete(`http://127.0.0.1:8000/api/recommendations/${recommendId}/`, {
+      let response = await axios.delete(`http://127.0.0.1:8000/api/recommendations/${recommendId}/`,
+      {
         headers: {
           Authorization: "Bearer " + token,
         },
-      });
-      refreshPage()
+      }
+      );
+      console.log(response.data)
+      refreshPage();
     } catch (error) {
       console.log("error with deleting recommendation")
     }

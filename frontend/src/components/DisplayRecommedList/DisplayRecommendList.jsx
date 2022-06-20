@@ -9,10 +9,10 @@ const DisplayRecommendation = (props) => {
         <div>
             <Fragment>
                 {props.getAllRecommendsProperty &&
-                    props.getAllRecommendsProperty.map((recommends, index) => {
+                    props.getAllRecommendsProperty.map((recommend, index) => {
                         return(
-                            <p className="form-control" key={recommends.id}>
-                                <Recommendation recommends={recommends} recommendId={recommends.id} />
+                            <p className="form-control" key={recommend.id}>
+                                <Recommendation recommends={recommend} recommendId={recommend.id} />
                             </p>
                         )
                         }
