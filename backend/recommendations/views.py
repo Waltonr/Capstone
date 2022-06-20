@@ -23,7 +23,7 @@ def user_recommendations(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['PUT', 'DELETE', 'GET'])
 @permission_classes([IsAuthenticated])
 def recommendation_detail(request, pk):
     recommend = get_object_or_404(Recommendation, pk=pk)
@@ -35,3 +35,6 @@ def recommendation_detail(request, pk):
     elif request.method == 'DELETE':
         recommend.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    elif request.method == 'GET':
+        serializer = RecommendationSerializer(recommend)
+        return Response(serializer.data, status=status.HTTP_200_OK)

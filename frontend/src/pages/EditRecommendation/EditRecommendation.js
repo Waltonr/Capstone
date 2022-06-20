@@ -30,7 +30,7 @@ const EditRecommendationPage = (props) => {
         getRecommend();
     }, [token])
     return ( 
-        <EditRecommendation Recommend={Recommend}/>
+        <EditRecommendation recommend={recommend}/>
      );
 }
  

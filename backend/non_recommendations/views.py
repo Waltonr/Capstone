@@ -12,8 +12,8 @@ from .serializers import Non_RecommendationSerializer
 @permission_classes([IsAuthenticated])
 def user_nonrecommendations(request):
     if request.method == 'GET':
-        recommend = Non_Recommendation.objects.all()
-        serializer = Non_RecommendationSerializer(recommend, many=True)
+        nonrecommend = Non_Recommendation.objects.all()
+        serializer = Non_RecommendationSerializer(nonrecommend, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':
         print('USER', f'{request.data} {request.user.email} {request.user.username}')
@@ -23,15 +23,18 @@ def user_nonrecommendations(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['PUT', 'DELETE', 'GET'])
 @permission_classes([IsAuthenticated])
 def nonrecommendation_detail(request, pk):
-    recommend = get_object_or_404(Non_Recommendation, pk=pk)
+    nonrecommend = get_object_or_404(Non_Recommendation, pk=pk)
     if request.method == 'PUT':
-        serializer = Non_RecommendationSerializer(recommend, data=request.data)
+        serializer = Non_RecommendationSerializer(nonrecommend, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
     elif request.method == 'DELETE':
-        recommend.delete()
+        nonrecommend.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    elif request.method == 'GET':
+        serializer = Non_RecommendationSerializer(nonrecommend)
+        return Response(serializer.data, status=status.HTTP_200_OK)
