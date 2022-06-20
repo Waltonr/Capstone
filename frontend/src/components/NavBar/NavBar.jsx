@@ -1,12 +1,13 @@
 import React from "react";
 import { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { id } = useParams();
   return (
     <div className="navBar">
       <ul>
@@ -29,7 +30,7 @@ const Navbar = () => {
           <button onClick={() => navigate("/dms")}>DMs</button>
         </li>
         <li>
-          <button onClick={() => navigate("/profile")}>Profile</button>
+          <button onClick={() => navigate(`/profile/${id}`)}>Profile</button>
         </li>
       </ul>
     </div>

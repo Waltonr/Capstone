@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 
-let init = {
+let initialValues = {
     text: "",
     likes: 0,
     dislikes: 0,
@@ -13,7 +13,7 @@ let init = {
 
 const EditPost = (props) => {
     const {post} = props
-    const [formData, handleInputChange] = useCustomForm(init, editPost());
+    const [formData, handleInputChange] = useCustomForm(initialValues, editPost());
     const {likes} = props
     const {dislikes} = props
     const { id } = useParams();
@@ -22,12 +22,14 @@ const EditPost = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        editPost(formData);
       };
+
     
     async function editPost() {
         try {
             let response = await axios.put(
-                `http://127.0.0.1:8000/api/post/${id}/`,
+                `http://127.0.0.1:8000/api/post/${post.id}/`,
                 formData,
                 {
                     headers: {
@@ -42,6 +44,8 @@ const EditPost = (props) => {
             
         }
     };
+
+    
     
 
 
@@ -60,7 +64,7 @@ const EditPost = (props) => {
                         likes={likes}
                         dislikes={dislikes}
                         /> 
-                        <button type="submit">Edit</button>
+                        <button type='submit'>Edit</button>
                     </label>
                 </div>
             </form>
