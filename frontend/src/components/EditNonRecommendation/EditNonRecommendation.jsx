@@ -71,6 +71,7 @@ const EditNonRecommendation = (props) => {
                         user_id={user.user_id}
                         />   
                     </label>
+                    <button type="submit">Edit</button>
                 </div>
             </form>
         </div>

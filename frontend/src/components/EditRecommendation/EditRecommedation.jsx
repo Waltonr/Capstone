@@ -5,7 +5,7 @@ import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 
 let initialValues = {
-    loction: "",
+    location: "",
     housing: "",
     user_id: ""
 }
@@ -71,6 +71,7 @@ const EditRecommendation = (props) => {
                         user_id={user.user_id}
                         />   
                     </label>
+                    <button type="submit">Edit</button>
                 </div>
             </form>
         </div>

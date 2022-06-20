@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import EditRecommendation from "../../components/EditRecommendation/EditRecommendation";
+import EditRecommendation from "../../components/EditRecommendation/EditRecommedation";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -29,8 +29,8 @@ const EditRecommendationPage = (props) => {
         };
         getRecommend();
     }, [token])
-    return ( 
-        <EditRecommendation recommend={recommend}/>
+    return (
+        <EditRecommendation recommend={recommend} />
      );
 }
  
