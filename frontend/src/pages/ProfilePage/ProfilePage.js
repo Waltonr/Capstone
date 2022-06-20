@@ -89,7 +89,7 @@ const Profile = (props) => {
               </tbody>
             </table>
           </div>
-          <div>
+          <div className="tables">
             <div className="table">
               <p className="p">My Recommendations !</p>
               <div>   

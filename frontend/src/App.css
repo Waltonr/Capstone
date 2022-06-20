@@ -60,24 +60,22 @@ body {
   font-size: 17px;
 }
 
-.table {
-  box-sizing: border-box;
-  border-style: double;
-  border-color: #a7a8cd;
-  flex-wrap: wrap;
-  padding: 10px;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 10%;
+.formcontrol {
+  border-bottom-style: ridge;
 }
+
+
 
 .post {
   box-sizing: border-box;
   border-style: hidden;
   flex-wrap: wrap;
   border-bottom-style: ridge;
-  padding: 25x;
-  margin: 55px;
+  padding: 40x;
+  margin: 6%;
+  height: 380px;
+  overflow-y: auto;
+  text-align:justify;
 }
 
 
@@ -129,18 +127,14 @@ padding-right: 2%;
 }
 
 .socialfeed {
-  padding: 20px;
-  margin: 7rem;
+  padding: 25px;
+  margin: 8rem;
 }
 
-.socialfeednamee {
+.socialfeedname {
   text-align: center;
   color: #454555;
   font-size: 3rem;
-}
-
-.formcontrol {
-  border-bottom-style: ridge;
 }
 
 .userlink {

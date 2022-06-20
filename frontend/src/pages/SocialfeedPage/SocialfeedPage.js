@@ -30,8 +30,12 @@ const SocialfeedPage = (props) => {
     return ( 
         <div className="socialfeed">
             <h2 className="socialfeedname">SOCIAL FEED</h2>
-            <CreatePost create={posts}/>
-            <DisplayPosts getAllPostsProperty={posts} />
+            <div>
+                <CreatePost create={posts}/>
+            </div>
+            <div>
+                <DisplayPosts getAllPostsProperty={posts} />
+            </div>
         </div>
      );
 }

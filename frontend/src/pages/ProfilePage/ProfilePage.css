@@ -25,3 +25,20 @@
     margin-right: 25%;
     margin-top: 5%;
   }
+
+  .table {
+    box-sizing: border-box;
+    border-style: double;
+    border-color: #a7a8cd;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10%;
+    width: 50%;
+    flex: wrap;
+  }
+  
+  .tables {
+    display: flex;
+  }
