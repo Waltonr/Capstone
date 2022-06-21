@@ -43,23 +43,36 @@ const Profile = (props) => {
         console.log("error with get nonrecommend list");
       }
     };
-    const getInformation = async () => {
-      try {
-        let response = await axios.get("http://127.0.0.1:8000/api/information/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        console.log(response.data)
-        setAllInfo(response.data);
-      } catch (error) {
-        console.log("error with get info");
-      }
-    };
-    getRecommendations();
     getNonRecommendations();
-    getInformation();
+    getRecommendations();
   }, [token]);
+
+  const getInformation = async () => {
+    try {
+      let response = await axios.get(`http://127.0.0.1:8000/api/information/${id}/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      console.log(response.data)
+      setAllInfo(response.data);
+    } catch (error) {
+        if (axios.isCancel(error)) {
+          return false;
+        }
+      console.log("error with get info");
+    }
+    return null;
+  };
+
+  useEffect(() => {
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
+      getInformation({cancelToken:source.token});
+    return () => {
+      source.cancel("axios request cancelled");
+    }
+  }, []);
 
   return (
       <div className="profile">
@@ -73,20 +86,14 @@ const Profile = (props) => {
                 </tr>
               </thead>
               <tbody>
-                  {info &&
-                        info.map((information, index) => (
-                            <tr key={index}>
-                                <td>Age:</td>
-                                <td>{information.age}</td>
-                            </tr>
-                        ))}
-                  {info &&
-                        info.map((information, index) => (
-                            <tr key={index}>
-                                <td>About:</td>
-                                <td>{information.about}</td>
-                            </tr>
-                        ))}
+                  <tr>
+                    <th>Age:</th>
+                    <th>{info.age}</th>
+                  </tr>
+                  <tr>
+                    <th>About:</th>
+                    <th>{info.about}</th>
+                  </tr>
               </tbody>
             </table>
           </div>
