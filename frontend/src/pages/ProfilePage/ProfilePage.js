@@ -14,6 +14,7 @@ const Profile = (props) => {
   const [user, token] = useAuth();
   const [recommends, setAllRecommends] = useState([]);
   const [nonrecommends, setAllNonRecommends] = useState([]);
+  const [memberName, setMemberName] = useState([]);
   const [info, setAllInfo] = useState([]);
 
   useEffect(() => {
@@ -74,9 +75,38 @@ const Profile = (props) => {
     }
   }, []);
 
+  const getMemberName = async () => {
+    try {
+      let response = await axios.get(`http://127.0.0.1:8000/api/auth/${id}/`,
+      {
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      }
+      );
+      console.log(response.data)
+      setMemberName(response.data);
+    } catch (error) {
+        if (axios.isCancel(error)) {
+          return false;
+        }
+      console.log("error with getting user's name")
+      }
+    return null
+  };
+
+  useEffect(() => {
+    const cancelToken = axios.CancelToken;
+    const source = cancelToken.source();
+      getMemberName({cancelToken:source.token});
+    return () => {
+      source.cancel("axios request cancelled");
+    }
+  }, []);
+
   return (
       <div className="profile">
-          <h3 className="profileuser"> {user.username}'s Profile</h3>
+          <h3 className="profileuser"> {memberName.username}'s Profile</h3>
           <div>
             <table className="tableinfo">
               <thead>
