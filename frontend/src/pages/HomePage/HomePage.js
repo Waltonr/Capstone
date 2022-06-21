@@ -29,7 +29,7 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
-      <h1>It's Time to Travel {user.username}!</h1>
+      <h1 className="home">It's Time to Travel {user.username}!</h1>
       <div>
           <img src={girlsonbeachselfie} alt="girlsonbeachselfie" width="550" height="500"/>
       </div>

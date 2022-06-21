@@ -48,8 +48,9 @@ const EditNonRecommendation = (props) => {
 
 
     return (
-        <div className="form">
-            <form onSubmit={handleSubmit}>
+        <div className="nonrecommend">
+            <h3>EDIT NON-RECOMMENDATION</h3>
+            <form className="nonrecommendform" onSubmit={handleSubmit}>
                 <div>
                     <label>
                         Location:{""}

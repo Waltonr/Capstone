@@ -48,8 +48,9 @@ const EditRecommendation = (props) => {
 
 
     return (
-        <div className="form">
-            <form onSubmit={handleSubmit}>
+        <div className="recommendation">
+            <h3>EDIT RECOMMENDATION</h3>
+            <form className="recommendform" onSubmit={handleSubmit}>
                 <div>
                     <label>
                         Location:{""}

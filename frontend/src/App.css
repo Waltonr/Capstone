@@ -147,3 +147,82 @@ padding-right: 2%;
   font-size: 17px;
 }
 
+.login {
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+}
+
+.loginpage {
+  display: flex;
+  flex: wrap;
+  justify-content: center;
+}
+
+.formlogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-left: 20px;
+}
+
+.containerlogin {
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: auto;
+  text-align: center;
+  padding-left: 60px;
+  padding-top: 200px;
+}
+
+.home {
+  font-size: 46px;
+  font-weight: 575;
+  text-transform: uppercase;
+}
+
+.recommendation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  box-shadow: #454555;
+  border-style: inset;
+  border-color: #a7a8cd;
+  flex-wrap: wrap;
+  margin: 20%;
+}
+
+.recommendform {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nonrecommendation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  box-shadow: #454555;
+  border-style: inset;
+  border-color: #a7a8cd;
+  flex-wrap: wrap;
+  margin: 20%;
+}
+
+.nonrecommendform {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
