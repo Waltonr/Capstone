@@ -51,8 +51,9 @@ const EditPost = (props) => {
 
 
     return (
-        <div className="form">
-            <form onSubmit={handleSubmit}>
+        <div className="postedit">
+            <h3>EDIT POST</h3>
+            <form className="postform" onSubmit={handleSubmit}>
                 <div>
                     <label>
                         <input

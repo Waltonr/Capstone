@@ -96,6 +96,28 @@ body {
   padding: 50px;
 }
 
+.postedit {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  box-shadow: #454555;
+  border-style: inset;
+  border-color: #a7a8cd;
+  flex-wrap: wrap;
+  margin: 20%;
+}
+
+.postform {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .likedbutton {
 color: green;
 box-sizing: border-box;
