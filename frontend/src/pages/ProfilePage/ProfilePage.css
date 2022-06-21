@@ -8,19 +8,26 @@
     text-align: -webkit-center;
   }
   
-  .profileuser {
-    font-family: cursive;
-    text-align-last: center;
-    font-weight: 200;
-    font-size: 40px;
-  }
-  
+.profileuser {
+  font-family: cursive;
+  text-align-last: center;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.editlink {
+  padding-left: 80%;
+  font-weight: 289;
+  font-size: 14px;
+}
+
 .tableinfo {
     box-sizing: border-box;
     border-style: double;
     border-color: #a7a8cd;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 18px;
+    padding-right: 55px;
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 5%;

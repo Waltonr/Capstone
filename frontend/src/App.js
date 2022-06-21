@@ -5,6 +5,7 @@ import "./App.css";
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import LogoutPage from "./pages/Logout/LogoutPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SocialfeedPage from "./pages/SocialfeedPage/SocialfeedPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
@@ -36,6 +37,7 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/logout" element={<PrivateRoute><LogoutPage /></PrivateRoute>} />
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
         <Route path="/profile/:id" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
         <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />

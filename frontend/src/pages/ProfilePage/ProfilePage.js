@@ -111,7 +111,7 @@ const Profile = (props) => {
               <thead>
                 <tr>
                   <th>INFORMATION</th>
-                  <Link className="editlink" to="editinfo" id={id}>edit</Link>
+                  <Link className="editlink" to="editinfo" id={id}>update</Link>
                 </tr>
               </thead>
               <tbody>
