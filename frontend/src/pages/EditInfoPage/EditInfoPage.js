@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import "./EditInfo.css";
@@ -11,7 +11,7 @@ let initvalues = {
 }
 
 const EditInfo = (props) => {
-    const { id } = props
+    const { id } = useParams();
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editInformation)
     const navigate = useNavigate()
@@ -27,7 +27,7 @@ const EditInfo = (props) => {
             }
             );
             console.log(response.data)
-            navigate("/profile")
+            navigate(`/profile/${id}`)
         } catch (error) {
             console.log("error with editing info")
             
@@ -35,14 +35,11 @@ const EditInfo = (props) => {
     }
 
     return ( 
-        <div>
-            <h2>Edit Info Page</h2>
-            <div className="form">
+        <div className="infoedit">
+            <h3>Information</h3>
+            <div className="infoform">
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>
-                            Information
-                        </label>
+                    <div className="form">
                         <label>
                             Age:{""}
                             <input

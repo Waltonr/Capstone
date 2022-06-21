@@ -40,7 +40,7 @@ function App() {
         <Route path="/logout" element={<PrivateRoute><LogoutPage /></PrivateRoute>} />
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
         <Route path="/profile/:id" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-        <Route path="/profile/editinfo" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
+        <Route path="/profile/editinfo/:id" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
         <Route path="/editpost/:id" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />
         <Route path="/editnonrecommendation/:id" element={<PrivateRoute><EditNonRecommendationPage /></PrivateRoute>} />
         <Route path="/editrecommendation/:id" element={<PrivateRoute><EditRecommendationPage /></PrivateRoute>} />

@@ -264,3 +264,24 @@ padding-right: 2%;
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.infoedit {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  box-shadow: #454555;
+  border-style: inset;
+  border-color: #a7a8cd;
+  flex-wrap: wrap;
+  margin: 20%;
+}
+
+.infoform {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+}
