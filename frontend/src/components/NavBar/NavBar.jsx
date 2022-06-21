@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import useAuth from "../../hooks/useAuth";
 import "./NavBar.css";
 
 const Navbar = () => {
@@ -30,7 +31,7 @@ const Navbar = () => {
           <button onClick={() => navigate("/dms")}>DMs</button>
         </li>
         <li>
-          <button onClick={() => navigate(`/profile/${id}`)}>Profile</button>
+          <button onClick={() => navigate(`/profile/${user.id}`)}>Profile</button>
         </li>
       </ul>
     </div>

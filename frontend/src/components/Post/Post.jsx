@@ -11,10 +11,26 @@ const Post = (props) => {
   const { userid } = props;
   const { id } = useParams();
   const [replies, setAllReplies] = useState();
-  const [memberName, setMemberName] = useState();
+  const [memberName, setAllMemberName] = useState();
   const [user, token] = useAuth(); 
   const [likedButton, setLikedButton] = useState("inactive");
   const [dislikedButton, setDislikedButton] = useState("inactive");
+  
+  async function getMemberName() {
+    try {
+      let response = await axios.get(`http://127.0.0.1:8000/api/auth/${userid}/`,
+      {
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      }
+      );
+      console.log(response.data)
+      setAllMemberName(response.data);
+    } catch (error) {
+      console.log("error with getting user's name")
+      }
+    };
 
   useEffect(() => {
     const getReplies = async() => {
@@ -30,24 +46,9 @@ const Post = (props) => {
           console.log("error with get replies by post id")
       }
     };
-  getReplies();
+    getReplies();
   }, [token])
 
-  async function getMemberName() {
-    try {
-      let response = await axios.get(`http://127.0.0.1:8000/api/auth/${userid}/`,
-      {
-        headers: {
-          Authorization: "Bearer " + token
-        }
-      }
-      );
-      console.log(response.data)
-      setMemberName(response.data);
-    } catch (error) {
-      console.log("error with getting user's name")
-      }
-    };
 
 
   function handleClick() {
@@ -63,7 +64,7 @@ const Post = (props) => {
   return ( 
     <div className="post">
       <div>
-        <Link className="userlink" to={`/profile/${userid}`}> </Link>
+        <Link className="userlink" to={`/profile/${userid}`}>{user.username} </Link>
         <Link className="editlink" to={`/editpost/${post.id}`} likes={post.likes} dislikes={post.dislikes} >edit</Link>
       </div>
       <div className="posttext">

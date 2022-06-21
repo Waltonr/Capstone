@@ -11,13 +11,14 @@ let initvalues = {
 }
 
 const EditInfo = (props) => {
+    const { id } = props
     const [user, token] = useAuth()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, editInformation)
     const navigate = useNavigate()
 
     async function editInformation() {
         try {
-            let response = await axios.put("http://127.0.0.1:8000/api/information/1/",
+            let response = await axios.put(`http://127.0.0.1:8000/api/information/${id}/`,
             formData,
             {
                 headers: {
