@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import MemberName from "../../components/MemberName/MemberName";
 import CreateRecommendation from "../../components/CreateRecommendation/CreateRecommendation";
 import DisplayRecommendation from "../../components/DisplayRecommedList/DisplayRecommendList";
 import CreateNonRecommendation from "../../components/CreateNonRecommendation/CreateNonRecommendation";

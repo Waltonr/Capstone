@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import DisplayReplies from "../DisplayReplies/DisplayReplies";
@@ -10,11 +10,12 @@ const Post = (props) => {
   const { post } = props;
   const { userid } = props;
   const { id } = useParams();
+  const [user, token] = useAuth(); 
   const [replies, setAllReplies] = useState();
   const [memberName, setMemberName] = useState([]);
-  const [user, token] = useAuth(); 
   const [likedButton, setLikedButton] = useState("inactive");
   const [dislikedButton, setDislikedButton] = useState("inactive");
+  const navigate = useNavigate();
   
   useEffect(() => {
     const getReplies = async() => {
@@ -62,9 +63,7 @@ const Post = (props) => {
     }
   }, []);
 
-
-
-  function handleClick() {
+  function updateLikes() {
       if(likedButton === "inactive"){
         setLikedButton("liked")
         setDislikedButton("inactive")
@@ -73,20 +72,21 @@ const Post = (props) => {
         setDislikedButton('disliked')
         setLikedButton("inactive")
       }
-    }
+  }
+
   return ( 
     <div className="post">
       <div>
-        <Link className="userlink" to={`/profile/${userid}`}>{memberName.username} </Link>
+        <button onClick={() => navigate(`/profile/${userid}`)}>{memberName.username}</button>
         <Link className="editlink" to={`/editpost/${post.id}`} likes={post.likes} dislikes={post.dislikes} >edit</Link>
       </div>
       <div className="posttext">
         {post.text}
       </div>
       <div className="likes">
-        <button className="likedbutton" onClick={handleClick}>Like</button>
+        <button className="likedbutton" onClick={updateLikes}>Like</button>
         {post.likes}
-        <button className="dislikedbutton" onClick={handleClick}>Dislike</button>
+        <button className="dislikedbutton" onClick={updateLikes}>Dislike</button>
         {post.dislikes}
       </div>
       <CreateReply postid={post.id}/>
