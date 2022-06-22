@@ -3,9 +3,9 @@ from chat import views
 
 urlpatterns = [
     path('', views.new_chat),
-    path('', views.new_outgoing),
-    path('all/', views.get_all_chats),
-    path('all/', views.get_all_outgoings),
-    path('<int:pk>/', views.chat_details),
-    path('<int:pk>/', views.outgoing_details)
+    path('message/', views.new_outgoing),
+    path('allchats/', views.get_all_chats),
+    path('allmessages/', views.get_all_outgoings),
+    path('chat/<int:pk>/', views.chat_details),
+    path('message/<int:pk>/', views.outgoing_details)
 ]
