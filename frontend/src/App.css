@@ -33,7 +33,7 @@ button:hover {
 }
 
 body {
-  background-image: radial-gradient(circle, #ffffff, #fbfafe, #f6f5fd, #f2f1fc, #edecfb, #e5e5f7, #deddf3, #d6d6ef, #cacae6, #bebfde, #b3b3d5, #a7a8cd);
+  background-image: radial-gradient(circle, #e1d3e9, #d7cae4, #cdc2de, #c2bad9, #b7b2d4, #b0afd4, #a9abd3, #a1a8d3, #9ca8d8, #96a8dd, #8ea8e2, #86a8e7);
 }
 
 .container {

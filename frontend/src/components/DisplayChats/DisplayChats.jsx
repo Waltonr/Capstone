@@ -11,7 +11,7 @@ const DisplayChats = (props) => {
                 props.getAllChatsProperty.map((chat, index) => {
                     return(
                         <tr className="form-control" key={chat.id}>
-                            <Chat chat={chat} userid={chat.user_id} />
+                            <Chat chat={chat} chatid={chat.user_id} />
                         </tr>
                     )
                     }

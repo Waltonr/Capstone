@@ -13,6 +13,7 @@ import EditInfoPage from "./pages/EditInfoPage/EditInfoPage";
 import EditPostPage from "./pages/EditPostPage/EditPostPage";
 import EditNonRecommendationPage from "./pages/EditNonRecommedation/EditNonRecommendation";
 import EditRecommendationPage from "./pages/EditRecommendation/EditRecommendation";
+import MessagePage from "./pages/Message/Message";
 import DirectMessage from "./pages/DirectMessage/DirectMessage";
 
 // Component Imports
@@ -40,6 +41,7 @@ function App() {
         <Route path="/logout" element={<PrivateRoute><LogoutPage /></PrivateRoute>} />
         <Route path="/socialfeed" element={<PrivateRoute><SocialfeedPage /></PrivateRoute>} />
         <Route path="/DM" element={<PrivateRoute><DirectMessage /></PrivateRoute>} />
+        <Route path="/DM/message/:id" element={<PrivateRoute><MessagePage /></PrivateRoute>} />
         <Route path="/profile/:id" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
         <Route path="/profile/editinfo/:id" element={<PrivateRoute><EditInfoPage /></PrivateRoute>} />
         <Route path="/editpost/:id" element={<PrivateRoute><EditPostPage /></PrivateRoute>} />

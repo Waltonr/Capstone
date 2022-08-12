@@ -41,7 +41,7 @@ const Chat = (props) => {
 
     return ( 
         <div>
-            <button onClick={() => navigate(`/messages/${chatid}`)}>{memberName.username}</button>
+            <button onClick={() => navigate(`/DM/message/${chatid}`)}>{memberName.username}</button>
         </div>
      );
 }
