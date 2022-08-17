@@ -45,7 +45,7 @@ const CreateNonRecommendation = (props) => {
         <form onSubmit={handleSubmit}>
         <div>
             <label>
-                Location:{""}
+                Location:{" "}
                 <input
                  type="text" 
                  name="location" 
@@ -55,7 +55,7 @@ const CreateNonRecommendation = (props) => {
                  />   
             </label>
             <label>
-                Housing:{""}
+                Housing:{" "}
                 <input
                  type="text" 
                  name="housing" 

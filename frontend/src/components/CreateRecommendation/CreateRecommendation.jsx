@@ -11,16 +11,12 @@ let initvalues = {
 
 const CreateRecommendation = (props) => {
     const [user, token] = useAuth();
-    const [formData, handleInputChange] = useCustomForm(initvalues, newRecommend);
+    const [formData, handleInputChange, handleSubmit] = useCustomForm(initvalues, newRecommend);
     const navigate = useNavigate();
     const refreshPage = () => {
         navigate(0);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        newRecommend(formData);
-      };
 
     async function newRecommend() {
         try {
@@ -41,10 +37,10 @@ const CreateRecommendation = (props) => {
         }
     }
     return (
-        <form className="pform" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label>
-                    Location:{""}
+                    Location:{" "}
                     <input
                     type="text" 
                     name="location" 
@@ -54,7 +50,7 @@ const CreateRecommendation = (props) => {
                     />   
                 </label>
                 <label>
-                    Housing:{""}
+                    Housing:{" "}
                     <input
                     type="text" 
                     name="housing" 
@@ -63,7 +59,7 @@ const CreateRecommendation = (props) => {
                     user_id={user.user_id}
                     />   
                 </label>
-                <button type='submit'>Add</button>
+                <button >Add</button>
             </div>
         </form>
      );

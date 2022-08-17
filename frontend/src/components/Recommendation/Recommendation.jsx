@@ -17,7 +17,7 @@ const Recommendation = (props) => {
   }
   async function deleteRecommend() {
     try {
-      let response = await axios.delete(`http://127.0.0.1:8000/api/recommendations/${recommendId}/`,
+      let response = await axios.delete(`http://127.0.0.1:8000/api/recommendations/${recommends}/`,
       {
         headers: {
           Authorization: "Bearer " + token,
