@@ -65,10 +65,14 @@ const Post = (props) => {
 
   function updateLikes() {
       if(likedButton === "inactive"){
+        post.likes += 1
+        post.dislikes -= 1
         setLikedButton("liked")
         setDislikedButton("inactive")
       }
       else if (dislikedButton === "inactive"){
+        post.dislikes += 1
+        post.likes -= 1
         setDislikedButton('disliked')
         setLikedButton("inactive")
       }
