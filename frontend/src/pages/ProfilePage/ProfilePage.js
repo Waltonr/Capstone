@@ -106,7 +106,7 @@ const Profile = (props) => {
 
   return (
       <div className="profile">
-          <h3 className="profileuser"> {memberName.username}'s Profile</h3>
+          <h3 className="profileuser"> Welcome to My Profile</h3>
           <div>
             <table className="tableinfo">
               <thead>
@@ -116,14 +116,18 @@ const Profile = (props) => {
                 </tr>
               </thead>
               <tbody>
-                  <tr>
-                    <th>Age:</th>
-                    <th>{info.age}</th>
-                  </tr>
-                  <tr>
-                    <th>About:</th>
-                    <th>{info.about}</th>
-                  </tr>
+                <tr>
+                  <th>Username:</th>
+                  <th>{memberName.username}</th>
+                </tr>
+                <tr>
+                  <th>Age:</th>
+                  <th>{info.age}</th>
+                </tr>
+                <tr>
+                  <th>About:</th>
+                  <th>{info.about}</th>
+                </tr>
               </tbody>
             </table>
           </div>
