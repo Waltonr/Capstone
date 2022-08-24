@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import DisplayReplies from "../DisplayReplies/DisplayReplies";
@@ -9,7 +9,6 @@ import CreateReply from "../CreateReply/CreateReply";
 const Post = (props) => {
   const { post } = props;
   const { userid } = props;
-  const { id } = useParams();
   const [user, token] = useAuth(); 
   const [replies, setAllReplies] = useState();
   const [memberName, setMemberName] = useState([]);
@@ -82,7 +81,7 @@ const Post = (props) => {
     <div className="post">
       <div>
         <button onClick={() => navigate(`/profile/${userid}`)}>{memberName.username}</button>
-        <Link className="editlink" to={`/editpost/${post.id}`} likes={post.likes} dislikes={post.dislikes} >edit</Link>
+        <button className="editlink" onClick={() => navigate(`/editpost/${post.id}`)} likes={post.likes} dislikes={post.dislikes} >edit</button>
       </div>
       <div className="posttext">
         {post.text}

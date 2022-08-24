@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import CreateRecommendation from "../CreateRecommendation/CreateRecommendation";
 import "./recommendation.css"
 
 
 const Recommendation = (props) => {
   const { recommends } = props
-  const { recommendId } = props
   const [user, token] = useAuth()
   const navigate = useNavigate()
   const refreshPage = () => {
@@ -34,13 +32,13 @@ const Recommendation = (props) => {
   return ( 
       <div>
         <div>
-          <Link className="editlink" to={`/editrecommendation/${recommendId}`}>edit</Link>
+          <Link className="editlink" to={`/editrecommendation/${recommends}`}>edit</Link>
         </div>
         <div className="recommend">
           <p>Location: {recommends.location}</p>
           <p>Housing: {recommends.housing}</p>
-          <button className="delete" onClick={deleteRecommend}>Delete</button>
         </div>
+        <button className="delete" onClick={deleteRecommend}>Delete</button>
     </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
 import CreateRecommendation from "../../components/CreateRecommendation/CreateRecommendation";
 import DisplayRecommendation from "../../components/DisplayRecommedList/DisplayRecommendList";
 import CreateNonRecommendation from "../../components/CreateNonRecommendation/CreateNonRecommendation";
@@ -15,6 +15,7 @@ const Profile = (props) => {
   const [nonrecommends, setAllNonRecommends] = useState([]);
   const [memberName, setMemberName] = useState([]);
   const [info, setAllInfo] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getRecommendations = async () => {
@@ -111,7 +112,7 @@ const Profile = (props) => {
               <thead>
                 <tr>
                   <th>INFORMATION</th>
-                  <Link className="editlink" to={`/profile/editinfo/${id}`}  id={id}>update</Link>
+                  <button className="editlink" onClick={() => navigate(`/profile/editinfo/${id}`)}  id={id}>update</button>
                 </tr>
               </thead>
               <tbody>
