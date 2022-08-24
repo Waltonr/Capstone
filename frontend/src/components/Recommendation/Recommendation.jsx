@@ -32,7 +32,7 @@ const Recommendation = (props) => {
   return ( 
       <div>
         <div>
-          <Link className="editlink" to={`/editrecommendation/${recommends}`}>edit</Link>
+          <button className="editlink" onClick={() => navigate(`/editrecommendation/${recommends}`)}>edit</button>
         </div>
         <div className="recommend">
           <p>Location: {recommends.location}</p>

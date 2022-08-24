@@ -30,7 +30,7 @@ const NonRecommendation = (props) => {
   return ( 
       <div>
         <div>
-          <Link className="editlink" to={`/editnonrecommendation/${nonRecommendId}`}>edit</Link>
+          <button className="editlink" onClick={() => navigate(`/editnonrecommendation/${nonRecommendId}`)}>edit</button>
         </div>
         <div className="nonrecommend">
           <p>Location: {nonRecommends.location}</p>
